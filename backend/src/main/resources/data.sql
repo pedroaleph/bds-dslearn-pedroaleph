@@ -22,14 +22,27 @@ INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) 
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Forum', 'Tire suas duvidas', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 2, 1);
 INSERT INTO tb_resource (title, description, position, img_uri, type, offer_id) VALUES ('Lives', 'Lives exclusivas para a turma', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 0, 1);
 
-INSERT INTO tb_section(title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 1', 'neste capitulo vamos começar', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 1 , null);
-INSERT INTO tb_section(title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 2', 'neste capitulo vamos cotinuar', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 1 , 1);
-INSERT INTO tb_section(title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 3', 'neste capitulo vamos finalizar', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 1 , 2);
+INSERT INTO tb_section(title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 1', 'Neste capitulo vamos começar', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 1 , null);
+INSERT INTO tb_section(title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 2', 'Neste capitulo vamos cotinuar', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 1 , 1);
+INSERT INTO tb_section(title, description, position, img_uri, resource_id, prerequisite_id) VALUES ('Capitulo 3', 'Neste capitulo vamos finalizar', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007__340.jpg', 1 , 2);
 
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (1, 1, TIMESTAMP WITH TIME ZONE '2020-11-12T13:00:00Z', null, true, false);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-11-12T13:00:00Z', null, true, false);
 
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1', 1, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (1, 'Material de apoio abc', 'https://youtu.be/os6hdZbCnpM');
 
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 2', 2, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (2, '', 'https://youtu.be/os6hdZbCnpM');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 3', 3, 1);
+INSERT INTO tb_content (id, text_content, video_uri) VALUES (3, '', 'https://youtu.be/os6hdZbCnpM');
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Tarefa do capitulo 1', 4, 1);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (4, 'Fazer o trabalho legal', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2020-11-25T13:00:00Z');
+
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done(lesson_id, user_id, offer_id) VALUES (2, 1, 1);
 
 
 

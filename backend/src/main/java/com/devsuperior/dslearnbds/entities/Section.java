@@ -1,6 +1,7 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -35,7 +36,7 @@ public class Section implements Serializable{
 	private Section prerequisite;
 	
 	@OneToMany(mappedBy = "section")
-	private List<Lesson> lessons;
+	private List<Lesson> lessons = new ArrayList<>();;
 	
 	public Section () {
 		
